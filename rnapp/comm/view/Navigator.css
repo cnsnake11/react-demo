@@ -1,0 +1,17 @@
+html,body{
+    height: 100%;
+}
+
+.bbt_nav_wrapper {
+    height: 100%;
+    background-color: #009900;
+}
+
+.bbt_nav_wrapper .page {
+    height: 100%;
+    overflow: auto;
+}
+
+.bbt_nav_wrapper .hidden {
+    display: none;
+}

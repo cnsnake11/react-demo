@@ -1,0 +1,12 @@
+body {
+    background-color: #0086b3;
+    color: #fff;
+}
+
+.title {
+    padding : 10px;
+}
+
+.list li {
+    padding: 10px;
+}
