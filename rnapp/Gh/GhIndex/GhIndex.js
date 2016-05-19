@@ -5,14 +5,13 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-//import { Router, Route, hashHistory } from 'react-router'
+
 import {
     BaseComponent,
 } from '../../comm';
 import Navigator from '../../comm/view/Navigator.js';
 
 import './GhIndex.css';
-
 import GhIndexObj from './GhIndexObj.js';
 
 
@@ -69,17 +68,9 @@ class List extends BaseComponent {
                 {
                     data.map((one) => {
                         return <li onClick={() => {
-                            //let path = `/repos`;
-                            //
-                            //this.getRootProps().history.push({
-                            //    pathname: path,
-                            //    state: {aaa:'11'}
-                            //});
-
-                            //render(<Repos a={this.getRoot()} />, document.getElementById('a'));
 
                             nav.push({
-                                name: 'repos',
+                                name: 'test',
                                 page: () => <Home />
                             });
 
@@ -92,12 +83,3 @@ class List extends BaseComponent {
 }
 
 render(<GhIndex />, document.getElementById('content'));
-
-import Repos from './Repos'
-//render((
-//    <Router history={hashHistory} >
-//        <Route path="/" component={GhIndex}/>
-//        {/* add the routes here */}
-//        <Route path="/repos" component={Repos}/>
-//    </Router>
-//), document.getElementById('content'))

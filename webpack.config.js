@@ -36,20 +36,20 @@ module.exports={
         ]
     },
     plugins:[
-        /*new webpack.DefinePlugin({
+        new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': '"production"'
             }
-        }),*/
+        }),
         new WebpackMd5Hash(),
         new ExtractTextPlugin("[name].[contenthash:16].css"),   //单独使用style标签加载css并设置其路径
-        /*new webpack.optimize.UglifyJsPlugin(
+        new webpack.optimize.UglifyJsPlugin(
             {
                 compress: {
                     warnings: false
                 }
             }
-        ),*/
+        ),
         new HtmlWebpackPlugin({                        //根据模板插入css/js等生成最终HTML
             filename:'GhIndex.html',    //生成的html存放路径，相对于 path
             template:'./rnapp/Gh/GhIndex/GhIndex.html',    //html模板路径
