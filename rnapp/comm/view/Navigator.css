@@ -7,11 +7,11 @@ html,body{
     background-color: #009900;
 }
 
-.bbt_nav_wrapper .page {
+.bbt_nav_wrapper .bbt_nav_page {
     height: 100%;
     overflow: auto;
 }
 
-.bbt_nav_wrapper .hidden {
+.bbt_nav_wrapper .bbt_nav_hidden {
     display: none;
 }

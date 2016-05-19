@@ -11,7 +11,6 @@ class Navigator extends BaseComponent {
 
     componentWillMount() {
         this._routes = [];
-
         this._routes.push(this.props.initialRoute);
     }
 
@@ -22,29 +21,39 @@ class Navigator extends BaseComponent {
     render() {
         return (
             <div className='bbt_nav_wrapper' id='bbt_nav_wrapper'>
-                <div className='page' id='bbt_nav_page_0'>
+                <div id='bbt_nav_page_0' className='bbt_nav_page'>
                     {
                         this._renderScene(this.getRootRoute())
                     }
                 </div>
-
-                <div className='page hidden' id='bbt_nav_page_1'></div>
             </div>
         );
     }
 
+    _injectPage(index) {
+        this.$('bbt_nav_wrapper').insertAdjacentHTML('beforeend',
+            `<div id='bbt_nav_page_${index}' class='bbt_nav_page'></div>`);
+    }
+
     push(route) {
+        this._hide(this.getCurrentPageDiv());
+
         this._routes.push(route);
-        ReactDom.render(route.page, document.getElementById('bbt_nav_page_1'));
-        this._show(this.$('bbt_nav_page_1'));
-        this._hide(this.$('bbt_nav_page_0'));
+        this._injectPage(this._routes.length - 1);
+        ReactDom.render(this._renderScene(route), this.getCurrentPageDiv());
     }
 
     pop() {
+
+        let last = this.getLastPageDiv();
+        if (!last) { // 已经是根页面
+            return ;
+        }
+
+        this._show(last);
+        this._destory(this.getCurrentPageDiv());
+
         this._routes.pop();
-        this._show(this.$('bbt_nav_page_0'));
-        this._hide(this.$('bbt_nav_page_1'));
-        ReactDom.unmountComponentAtNode(this.$('bbt_nav_page_1'));
     }
 
     getRootRoute() {
@@ -59,16 +68,32 @@ class Navigator extends BaseComponent {
         return this._routes;
     }
 
+    getCurrentPageDiv() {
+        return this.$(`bbt_nav_page_${this._routes.length - 1}`);
+    }
+
+    getLastPageDiv() {
+        if (this._routes.length <= 1) { // 已经在根页面
+            return null;
+        }
+        return this.$(`bbt_nav_page_${this._routes.length - 2}`);
+    }
+
     _renderScene(route) {
         return route.page();
     }
 
     _show(el) {
-        el.className = 'page';
+        el.className = 'bbt_nav_page';
     }
 
     _hide(el) {
-        el.className = 'page hidden';
+        el.className = 'bbt_nav_page bbt_nav_hidden';
+    }
+
+    _destory(page) {
+        ReactDom.unmountComponentAtNode(page);
+        page.parentNode.removeChild(page);
     }
 
 }

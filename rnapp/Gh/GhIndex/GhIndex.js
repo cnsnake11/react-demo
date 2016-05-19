@@ -18,10 +18,22 @@ import GhIndexObj from './GhIndexObj.js';
 
 class GhIndex extends BaseComponent {
 
-    //constructor() {
-    //    super();
-    //}
 
+    render() {
+        return (
+            <Navigator ref={(nav) => window.nav = nav} initialRoute={this._getInitRoute()} />
+        );
+    }
+
+    _getInitRoute() {
+        return {
+            name: 'home',
+            page: () => <Home />,
+        };
+    }
+}
+
+class Home extends BaseComponent {
     componentWillMount() {
         this.state = {
             initData: null,
@@ -32,23 +44,9 @@ class GhIndex extends BaseComponent {
     }
 
     render() {
-
-        return (
-            <Navigator ref={(nav) => window.nav = nav} initialRoute={this._getInitRoute()} />
-        );
-    }
-
-    _getInitRoute() {
-        return {
-            name: 'home',
-            page: () => this._getHome(),
-        };
-    }
-
-    _getHome() {
         return (
             <div>
-                <h1 className='title'>干货集中营</h1>
+                <h1 className='title' onClick={() => nav.pop()}>干货集中营 back</h1>
 
                 {this.getState().initData ?
                     <List root={this} data={this.getState().initData.results} />
@@ -59,6 +57,7 @@ class GhIndex extends BaseComponent {
         );
     }
 }
+
 
 class List extends BaseComponent {
 
@@ -81,7 +80,7 @@ class List extends BaseComponent {
 
                             nav.push({
                                 name: 'repos',
-                                page: <Repos a={this.getRoot()} />
+                                page: () => <Home />
                             });
 
                         }}>{one.desc}</li>;
