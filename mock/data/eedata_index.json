@@ -1,0 +1,43 @@
+{
+  "data" :{
+    "sliders" : [
+      "/mock/img/slider1.png",
+      "/mock/img/video1.png",
+      "/mock/img/video2.png",
+      "/mock/img/video3.png",
+      "/mock/img/video4.png"
+    ],
+    "videos": [
+      {
+        "title": "如何解决家中有两包吃醋打架的问题",
+        "img": "/mock/img/video1.png",
+        "count": "2671"
+      },
+      {
+        "title": "磨蹭的宝宝怎么样才能训练他们动作快起来",
+        "img": "/mock/img/video2.png",
+        "count": "2671"
+      },
+      {
+        "title": "如何解决家中有两包吃醋打架的问题",
+        "img": "/mock/img/video3.png",
+        "count": "2671"
+      },
+      {
+        "title": "磨蹭的宝宝怎么样才能训练他们动作快起来",
+        "img": "/mock/img/video4.png",
+        "count": "2671"
+      },
+      {
+        "title": "如何解决家中有两包吃醋打架的问题",
+        "img": "/mock/img/video5.png",
+        "count": "2671"
+      },
+      {
+        "title": "磨蹭的宝宝怎么样才能训练他们动作快起来",
+        "img": "/mock/img/video6.png",
+        "count": "2671"
+      }
+    ]
+  }
+}

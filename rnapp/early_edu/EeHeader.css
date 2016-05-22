@@ -1,0 +1,32 @@
+.eeheader {
+    background: #FF9AA0;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 12px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.eeheader .back {
+    background: url("./img/back.png") no-repeat;
+}
+
+.eeheader .history {
+    background: url("./img/clock.png") no-repeat right;
+}
+
+.eeheader .left,.eeheader .right{
+    width: 50px;
+    height: 20px;
+    background-size: contain;
+    margin-top: 3px;
+}
+
+.eeheader .left {
+    float: left;
+}
+
+.eeheader .right {
+    float: right;
+}
+

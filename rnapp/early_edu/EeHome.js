@@ -1,0 +1,127 @@
+
+'use strict';
+
+//引入的顺序要求是 1第三方框架 2自研通用框架 3业务， 这样可以保证打包顺序
+
+import React from 'react';
+import Slider from 'react-slick';
+
+import {
+    BaseComponent,
+} from '../comm';
+
+import './EeHome.css';
+import EeHomeObj from './EeHomeObj.js';
+import EeHeader from './EeHeader.js';
+
+export default class EeHome extends BaseComponent {
+
+    componentWillMount() {
+        this.state = {
+            initData: null,
+        };
+
+        this.obj = new EeHomeObj(this);
+        this.obj.init();
+    }
+
+    render() {
+
+        let data = this.getState().initData;
+
+        return (
+            <div id='EeHome'>
+                <EeHeader title='早教课堂' rightBtn='history'
+                          rightBtnPress={() => alert('播放历史')} />
+
+                {
+                    this.getMain(data)
+                }
+
+            </div>
+        );
+    }
+
+    getMain(data) {
+        if (!data) {
+            return '努力加载中.....'
+        }
+
+        return (
+            <div>
+                <HomeSlider data={data.sliders}/>
+                <HomeVideoList data={data.videos} />
+            </div>
+        );
+    }
+}
+
+
+class HomeVideoList extends BaseComponent {
+    render() {
+
+        let data = this.getProps().data;
+
+        return (
+            <div className='eehome_video_list'>
+                <h1>早教视频</h1>
+
+                <ul>
+                    {
+                        data.map((one, index) => {
+                            let imgStyle={backgroundImage: `url(${one.img})`};
+                            return (
+                                <li>
+                                    <div style={imgStyle}></div>
+                                    <h2>{one.title}</h2>
+                                    <h3>{one.count}次播放</h3>
+                                </li>
+                            );
+                        })
+                    }
+                    <div style={{clear: 'both'}}></div>
+                </ul>
+
+            </div>
+        );
+    }
+}
+
+
+
+class HomeSlider extends BaseComponent {
+
+    render() {
+
+        let data = this.getProps().data;
+
+        if (!data) {
+            return null;
+        }
+
+        let settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: true,
+        };
+        return (
+            <Slider {...settings}>
+                {
+                    data.map((one) => {
+                        let style={backgroundImage: `url(${one})`};
+                        return (
+                            <div style={style} className='eehome_slider_div'>
+                                <h1>宝宝：我就喜欢自己玩</h1>
+                            </div>
+                        );
+                    })
+                }
+            </Slider>
+        );
+    }
+
+}

@@ -7,8 +7,8 @@ var util = require('./webpack.util.js');
 
 module.exports={
     entry: {
-        frame: ['react','react-dom','whatwg-fetch'],
-        'GhIndex': ['./rnapp/Gh/GhIndex/GhIndex.js']
+        frame: ['react','react-dom','whatwg-fetch','react-slick','./rnapp/lib/slick.css'],
+        'eeindex': ['./rnapp/early_edu/EeIndex.js']
     },
     output:{
         path: path.resolve(__dirname, 'dist'),
@@ -51,11 +51,11 @@ module.exports={
             }
         ),
         new HtmlWebpackPlugin({                        //根据模板插入css/js等生成最终HTML
-            filename:'GhIndex.html',    //生成的html存放路径，相对于 path
-            template:'./rnapp/Gh/GhIndex/GhIndex.html',    //html模板路径
+            filename:'eeindex.html',    //生成的html存放路径，相对于 path
+            template:'./rnapp/early_edu/early_edu_index.html',    //html模板路径
             inject:true,    //允许插件修改哪些内容，包括head与body
             hash:false,    //为静态资源生成hash值
-            chunks:['frame','GhIndex'],
+            chunks:['frame','eeindex'],
             minify:{    //压缩HTML文件
                 removeComments:true,    //移除HTML中的注释
                 collapseWhitespace:true    //删除空白符与换行符
