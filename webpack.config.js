@@ -7,7 +7,7 @@ var util = require('./webpack.util.js');
 
 module.exports={
     entry: {
-        frame: ['react','react-dom','whatwg-fetch','react-slick','./rnapp/lib/slick.css'],
+        frame: ['react','react-dom','whatwg-fetch','react-flex-slick'],
         'eeindex': ['./rnapp/early_edu/EeIndex.js']
     },
     output:{

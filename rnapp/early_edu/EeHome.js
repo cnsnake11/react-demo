@@ -4,7 +4,7 @@
 //引入的顺序要求是 1第三方框架 2自研通用框架 3业务， 这样可以保证打包顺序
 
 import React from 'react';
-import Slider from 'react-slick';
+import { Slider, Slides, PrevArrow, NextArrow, Dots } from 'react-flex-slick';
 
 import {
     BaseComponent,
@@ -48,7 +48,6 @@ export default class EeHome extends BaseComponent {
         if (!data) {
             return <Loading />;
         }
-
         return (
             <div>
                 <HomeSlider data={data.sliders} root={this}/>
@@ -62,6 +61,9 @@ export default class EeHome extends BaseComponent {
 
 
 class HomeSlider extends BaseComponent {
+    shouldComponentUpdate() {
+        return false;
+    }
 
     render() {
 
@@ -71,27 +73,36 @@ class HomeSlider extends BaseComponent {
             return null;
         }
 
-        let settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            autoplay: false,
+
+
+        const slideStyle = {
+            width: 540,
+            height: 125,
+            backgroundColor: 'slateblue',
+            color: 'white',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
         };
+
         return (
-            <Slider {...settings}>
-                {
-                    data.map((one) => {
-                        let style={backgroundImage: `url(${one})`};
-                        return (
-                            <div style={style} className='eehome_slider_div'>
-                                <h1>宝宝：我就喜欢自己玩</h1>
-                            </div>
-                        );
-                    })
-                }
+            <Slider infinite swipe draggable >
+                <PrevArrow />
+                 <Slides {...this.props}  >
+                     {
+                         data.map((one) => {
+                             //let style={backgroundImage: `url(${one})`};
+                             slideStyle.backgroundImage =  `url(${one})`;
+                             return (
+                                 <div style={slideStyle} className='eehome_slider_div'>
+                                     <h1>宝宝：我就喜欢自己玩</h1>
+                                 </div>
+                             );
+                         })
+                         }
+                </Slides>
+                <NextArrow />
+                 <Dots />
             </Slider>
         );
     }
