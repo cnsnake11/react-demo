@@ -73,24 +73,21 @@ class HomeSlider extends BaseComponent {
             return null;
         }
 
-
-
-        const slideStyle = {
-            width: 540,
-            height: 125,
-            backgroundColor: 'slateblue',
-            color: 'white',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-        };
-
         return (
             <Slider infinite swipe draggable >
                 <PrevArrow />
                  <Slides {...this.props}  >
                      {
                          data.map((one) => {
+                             let slideStyle = {
+                                 width: 540,
+                                 height: 125,
+                                 backgroundColor: 'slateblue',
+                                 color: 'white',
+                                 display: 'flex',
+                                 justifyContent: 'center',
+                                 alignItems: 'center'
+                             };
                              //let style={backgroundImage: `url(${one})`};
                              slideStyle.backgroundImage =  `url(${one})`;
                              return (
