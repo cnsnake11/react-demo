@@ -15,10 +15,17 @@ import './EeButton.css';
 export default  class EeButton extends BaseComponent {
     render() {
 
-        let {title, onClick} = this.getProps();
+        let {title, onClick, theme} = this.getProps();
+
+        if (theme) {
+            theme = 'eebutton_' + theme;
+        }
+
+        let className = 'eebutton ' + theme;
+
 
         return (
-            <div className='eebutton' onClick={() => onClick()}>
+            <div className={className} onClick={() => onClick()}>
                 {title}
             </div>
         );

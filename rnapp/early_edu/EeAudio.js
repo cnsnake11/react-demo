@@ -31,7 +31,7 @@ export default  class EeAudio extends BaseComponent {
     render() {
 
         return (
-            <div>
+            <div className='eeroot'>
                 <EeHeader title='如何解决家中有两包吃醋打架的问题'/>
                 {
                     this.getMain()
@@ -50,7 +50,7 @@ export default  class EeAudio extends BaseComponent {
 
         return (
           <div>
-              <EeVideoDetail root={this} data={initData.video}/>
+              <EeAudioDetail root={this} data={initData.video}/>
               <EeRecVideo root={this} data={initData.video2}/>
               <EeComment root={this} data={initData}/>
           </div>
@@ -58,23 +58,28 @@ export default  class EeAudio extends BaseComponent {
     }
 }
 
-class EeVideoDetail extends BaseComponent{
+class EeAudioDetail extends BaseComponent{
     render() {
 
         let data = this.getProps().data;
         let imgStyle={backgroundImage: `url(${data.img})`};
 
         return (
-            <div className='eevideo_detail' style={{marginBottom: '10px'}}>
+            <div className='eeaudio_detail' style={{marginBottom: '10px'}}>
 
-                <div className='eevideo_preview' style={imgStyle}>
-                    <div></div>
-                </div>
-                <div className='eevideo_play'></div>
+                <div className='eeaudio_preview' style={imgStyle}></div>
 
-                <div className='eevideo_title'>
-                    <h1>{data.title}</h1>
-                    综合分值,,,,,&nbsp;&nbsp;&nbsp;&nbsp;{data.counts}次播放
+                <div className='eeaudio_player'>
+                    <h1>听听宝宝树的专家们对这个问题的解释吧：</h1>
+
+                    <div className='eeaudio_player_icon'></div>
+
+                    <div>
+                        02:00
+                        <div>进度条</div>
+                        08:08
+                    </div>
+
                 </div>
             </div>
         );

@@ -1,0 +1,24 @@
+.eeaudio_detail {
+    position: relative;
+}
+.eeaudio_detail .eeaudio_preview{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 220px;
+    position: relative;
+}
+
+.eeaudio_detail .eeaudio_player h1 {
+    padding: 15px 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+}
+
+.eeaudio_player_icon {
+    background: url("./img/sound.png") center no-repeat;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
