@@ -11,6 +11,7 @@ import {
     Navigator,
 } from '../comm';
 import EeHome from './EeHome.js';
+import EeCommentList from './EeCommentList.js';
 
 
 class EeIndex extends BaseComponent {

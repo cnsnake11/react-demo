@@ -32,10 +32,10 @@ export default class EeHome extends BaseComponent {
         let data = this.getState().initData;
 
         return (
-            <div id='EeHome' className='eeroot'>
+            <div id='EeHome' >
                 <EeHeader title='早教课堂' rightBtn='history'
                           rightBtnPress={() => alert('播放历史')} />
-
+                <div className='eeheader_height'></div>
                 {
                     this.getMain(data)
                 }
@@ -78,7 +78,7 @@ class HomeSlider extends BaseComponent {
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
-            autoplay: true,
+            autoplay: false,
         };
         return (
             <Slider {...settings}>

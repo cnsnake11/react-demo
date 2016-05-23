@@ -27,10 +27,25 @@ export default  class EeCommentList extends BaseComponent {
     }
 
     render() {
-
         return (
-            <div className='eeroot'>
+            <div id='EeCommentList' style={{height: '100%', overflow: 'auto'}}
+                onScroll={(e) => {
+                    var panel = document.getElementById("EeCommentList");
+                    var scrollTop,maxScroll=0;
+                    scrollTop = panel.scrollTop;
+                    maxScroll = panel.scrollHeight - panel.offsetHeight;
+                    if(scrollTop >= maxScroll){
+                        console.log("滚动到底了 ");
+                        return false;
+                    }
+                    if(scrollTop <=0){
+                        console.log("滚动到顶了 ");
+                        return false;
+                    }
+                }}
+            >
                 <EeHeader title='评论'/>
+                <div className='eeheader_height'></div>
                 {
                     this.getMain()
                 }
