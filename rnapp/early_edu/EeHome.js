@@ -13,6 +13,7 @@ import {
 import './EeHome.css';
 import EeHomeObj from './EeHomeObj.js';
 import EeHeader from './EeHeader.js';
+import EeButton from './EeButton.js';
 
 export default class EeHome extends BaseComponent {
 
@@ -51,37 +52,7 @@ export default class EeHome extends BaseComponent {
             <div>
                 <HomeSlider data={data.sliders}/>
                 <HomeVideoList data={data.videos} />
-            </div>
-        );
-    }
-}
-
-
-class HomeVideoList extends BaseComponent {
-    render() {
-
-        let data = this.getProps().data;
-
-        return (
-            <div className='eehome_video_list'>
-                <h1>早教视频</h1>
-
-                <ul>
-                    {
-                        data.map((one, index) => {
-                            let imgStyle={backgroundImage: `url(${one.img})`};
-                            return (
-                                <li>
-                                    <div style={imgStyle}></div>
-                                    <h2>{one.title}</h2>
-                                    <h3>{one.count}次播放</h3>
-                                </li>
-                            );
-                        })
-                    }
-                    <div style={{clear: 'both'}}></div>
-                </ul>
-
+                <HomeAudioList data={data.audios} />
             </div>
         );
     }
@@ -124,4 +95,67 @@ class HomeSlider extends BaseComponent {
         );
     }
 
+}
+
+
+class HomeVideoList extends BaseComponent {
+    render() {
+
+        let data = this.getProps().data;
+
+        return (
+            <div className='eehome_video_list' style={{marginBottom: '10px'}}>
+                <h1>早教视频</h1>
+
+                <ul>
+                    {
+                        data.map((one, index) => {
+                            let imgStyle={backgroundImage: `url(${one.img})`};
+                            return (
+                                <li>
+                                    <div style={imgStyle}></div>
+                                    <h2>{one.title}</h2>
+                                    <h3>{one.count}次播放</h3>
+                                </li>
+                            );
+                        })
+                    }
+                    <div style={{clear: 'both'}}></div>
+                </ul>
+
+                <EeButton title='更多育儿视频' onClick={() => alert('更多音频')} />
+            </div>
+        );
+    }
+}
+
+
+class HomeAudioList extends BaseComponent {
+    render() {
+
+        let data = this.getProps().data;
+
+        return (
+            <div className='eehome_audio_list'>
+                <h1>早教音频</h1>
+
+                <ul>
+                    {
+                        data.map((one, index) => {
+                            let imgStyle={backgroundImage: `url(${one.img})`};
+                            return (
+                                <li>
+                                    <div style={imgStyle}></div>
+                                    <h2>{one.title}</h2>
+                                </li>
+                            );
+                        })
+                    }
+                    <div style={{clear: 'both'}}></div>
+                </ul>
+
+                <EeButton title='更多育儿音频' onClick={() => alert('更多音频')}/>
+            </div>
+        );
+    }
 }

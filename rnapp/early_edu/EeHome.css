@@ -1,3 +1,8 @@
+html {
+    background-color: #fafafa;
+}
+
+
 .eehome_slider_div {
     background-size: cover;
     background-position: center;
@@ -5,7 +10,6 @@
     height: 220px;
     position: relative;
 }
-
 .eehome_slider_div h1 {
     position: absolute;
     bottom: 10px;
@@ -14,64 +18,53 @@
     font-size: 18px;
     font-weight: normal;
 }
-
 #EeHome .slick-slider {
     margin: 0;
 }
-
 #EeHome .slick-dots{
     bottom: 10px;
     right: 10px;
     width: auto;
 }
-
 #EeHome .slick-dots li{
     margin: 0;
 }
-
 #EeHome .slick-dots li, .slick-dots li button{
     width: 13px;
 }
-
 #EeHome .slick-dots li button:before{
     color: #fff;
     font-size: 22px;
 }
-
 #EeHome .slick-dots li.slick-active button:before{
     opacity: 1;
 }
 
 
-
-.eehome_video_list{
-    padding: 15px;
+.eehome_video_list,.eehome_audio_list{
+    padding: 20px 15px;
+    background: #fff;
 }
-
-.eehome_video_list h1{
+.eehome_video_list h1,.eehome_audio_list h1{
     color: #222;
     font-size: 18px;
     margin-bottom: 15px;
     font-weight: normal;
 }
-
 .eehome_video_list li {
     width: 49%;
     float: left;
     margin-bottom: 15px;
 }
-
 .eehome_video_list li:nth-child(even){
     float: right;
  }
-
 .eehome_video_list li div{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100px;
 }
-
 .eehome_video_list li h2{
     font-size: 16px;
     color: #222;
@@ -81,9 +74,24 @@
     overflow: hidden;
     font-weight: normal;
 }
-
 .eehome_video_list li h3{
     font-size: 12px;
     color: #ccc;
     font-weight: normal;
 }
+
+
+.eehome_audio_list li div{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 140px;
+}
+.eehome_audio_list li h2{
+    font-size: 16px;
+    color: #222;
+    line-height: 24px;
+    font-weight: normal;
+    padding: 10px 0 15px 0;
+}
+
