@@ -12,5 +12,8 @@ html,body{
 }
 
 .bbt_nav_wrapper .bbt_nav_hidden {
-    display: none;
+    /*display: none;*/
+    /*为了解决slider滚动过程隐藏会崩溃的问题*/
+    position: absolute;
+    left: -9999px;
 }

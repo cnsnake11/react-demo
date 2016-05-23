@@ -10,6 +10,7 @@ import {
 } from '../comm';
 
 import './EeRecVideo.css';
+import EeVideo from './EeVideo.js';
 
 
 export default  class EeRecVideo extends BaseComponent {
@@ -19,7 +20,14 @@ export default  class EeRecVideo extends BaseComponent {
         let imgStyle={backgroundImage: `url(${data.img})`};
 
         return (
-            <div className='eerecvideo' style={{marginBottom: '10px'}}>
+            <div className='eerecvideo' style={{marginBottom: '10px'}}
+                onClick={() => {
+                    nav.push({
+                        name: 'EeVideo',
+                        page: () => <EeVideo />,
+                    })
+                }}
+                >
                 <h1>推荐视频</h1>
 
                 <div className='eerecvideo_left' style={imgStyle}></div>
