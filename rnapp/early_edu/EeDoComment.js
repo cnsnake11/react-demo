@@ -19,8 +19,9 @@ export default  class EeDoComment extends BaseComponent {
     render() {
 
         return (
-            <div className='eeroot'>
+            <div>
                 <EeHeader title='写评论'/>
+                <div className='eeheader_height'></div>
                 <div className='eedocomment'>
                     <div className='eedocomment_wrapper'>
                         <textarea placeholder="请输入评论内容"></textarea>
