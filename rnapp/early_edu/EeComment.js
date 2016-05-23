@@ -11,7 +11,9 @@ import {
 
 import './EeComment.css';
 import EeButton from './EeButton.js';
-
+import EeDoComment from './EeDoComment.js';
+import EeCommentRow from './EeCommentRow.js';
+import EeCommentList from './EeCommentList.js';
 
 export default  class EeComment extends BaseComponent {
 
@@ -23,9 +25,14 @@ export default  class EeComment extends BaseComponent {
 
                 <EeWantComment root={this} data={data.user} />
 
-                <EeCommentList root={this} data={data.comments} />
+                <EeComments root={this} data={data.comments} />
 
-                <EeButton title='查看全部评论' onClick={() => alert('全部评论')}/>
+                <EeButton title='查看全部评论' onClick={() => {
+                    nav.push({
+                        name: 'EeCommentList',
+                        page: () => <EeCommentList />
+                    });
+                }}/>
             </div>
         );
     }
@@ -39,32 +46,25 @@ class EeWantComment extends BaseComponent {
         return (
             <div className='eewantcomment'>
                 <img src={data.icon}/>
-                <div>我来说几句</div>
+                <div onClick={() => {
+                    nav.push({
+                        name: 'EeDoComment',
+                        page: () => <EeDoComment />
+                    });
+                }}>我来说几句</div>
             </div>
         );
     }
 }
 
-class EeCommentList extends BaseComponent {
+class EeComments extends BaseComponent {
     render() {
 
         let data = this.getProps().data;
-
         return (
             <ul className='eecommentlist'>
                 {
-                    data.map((one) => {
-                        return (
-                            <li>
-                                <img src={one.user.icon}/>
-                                <div>
-                                    <h2>{one.user.nickname}</h2>
-                                    <h3>{one.title}</h3>
-                                </div>
-                                <div style={{clear: 'both'}}></div>
-                            </li>
-                        )
-                    })
+                    data.map((one) => <EeCommentRow data={one}/>)
                 }
             </ul>
         );

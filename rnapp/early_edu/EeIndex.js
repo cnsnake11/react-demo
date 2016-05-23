@@ -11,7 +11,6 @@ import {
     Navigator,
 } from '../comm';
 import EeHome from './EeHome.js';
-import EeDoComment from './EeDoComment.js';
 
 
 class EeIndex extends BaseComponent {
@@ -29,7 +28,7 @@ class EeIndex extends BaseComponent {
     _getInitRoute() {
         return {
             name: 'home',
-            page: () => <EeDoComment />
+            page: () => <EeHome />
         };
     }
 }
