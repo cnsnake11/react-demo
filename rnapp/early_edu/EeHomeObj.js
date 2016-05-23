@@ -6,6 +6,8 @@ import {
     BaseLogicObj,
 } from '../comm';
 
+import EeVideo from './EeVideo.js';
+
 export default class EeHomeObj extends BaseLogicObj {
 
     constructor(root) {
@@ -15,10 +17,19 @@ export default class EeHomeObj extends BaseLogicObj {
     init() {
 
         // todo mock
-        fetch('/mock/data/eedata_index.json').then((res) => res.json()).then((res) => {
-            this.setState({initData: res.data});
-        });
+        setTimeout(() => {
+            fetch('/mock/data/eedata_index.json').then((res) => res.json()).then((res) => {
+                this.setState({initData: res.data});
+            });
+        }, 200);
 
+    }
+
+    goVideo() {
+        nav.push({
+            name: 'EeVideo',
+            page: () => <EeVideo />,
+        });
     }
 
 }

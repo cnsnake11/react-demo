@@ -55,6 +55,14 @@ class BaseComponent extends Component {
 
         return this.getRoot().refs;
     }
+
+    getRootObj() {
+        if (!this.getRoot()) {
+            throw new Error('root is not defined!');
+        }
+
+        return this.getRoot().obj;
+    }
 }
 
 module.exports = BaseComponent;

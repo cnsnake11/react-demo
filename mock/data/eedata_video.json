@@ -1,0 +1,44 @@
+{
+  "data" :{
+    "video" :{
+      "title": "磨蹭的小孩怎么快起来？",
+      "counts": "2671",
+      "score": "3.5",
+      "img": "/mock/img/slider1.png"
+    },
+    "video2":{
+      "title": "如何解决家中有两包吃醋打架的问题？",
+      "counts": "2671",
+      "img": "/mock/img/video6.png"
+    },
+    "comment": {
+      "counts": "128"
+    },
+    "comments": [
+      {
+        "title": "很有建设性！我家宝宝就是很拖延，一直比较纠结怎么处理这样的问题~",
+        "user": {
+          "nickname":"小松鼠的妈妈",
+          "icon":"/mock/img/icon2.png"
+        }
+      },
+      {
+        "title": "宝宝磨蹭也可能是因为害怕呢",
+        "user": {
+          "nickname":"樱木前世是美女",
+          "icon":"/mock/img/icon3.png"
+        }
+      },
+      {
+        "title": "最近正烦恼这个~",
+        "user": {
+          "nickname":"这是什么鬼",
+          "icon":"/mock/img/icon4.png"
+        }
+      }
+    ],
+    "user": {
+      "icon":"/mock/img/icon1.png"
+    }
+  }
+}

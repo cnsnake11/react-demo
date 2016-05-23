@@ -14,9 +14,16 @@ import './EeHeader.css';
 export default class EeHeader extends BaseComponent {
 
     render() {
+
+        let theme = this.getProps().theme;
+        let className = 'eeheader';
+        if (theme === 'transparent') {
+            className += ' eeheader_transparent';
+        }
+
         return (
-            <div className='eeheader'>
-                <div className='left back' onClick={() => alert('back')}></div>
+            <div className={className}>
+                <div className='left back' onClick={() => nav.pop()}></div>
                 {this.props.title}
                 {this._getRightBtn()}
             </div>

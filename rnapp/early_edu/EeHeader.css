@@ -2,13 +2,18 @@
     background: #FF9AA0;
     color: #fff;
     font-size: 18px;
-    padding: 10px 12px;
+    padding: 10px 0px;
     text-align: center;
     font-weight: normal;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .eeheader .back {
-    background: url("./img/back.png") no-repeat;
+    background: url("./img/back.png") no-repeat left;
 }
 
 .eeheader .history {
@@ -24,9 +29,23 @@
 
 .eeheader .left {
     float: left;
+    margin-left: 12px;
 }
 
 .eeheader .right {
     float: right;
+    margin-right: 12px;
+}
+.eeheader_transparent {
+    background: transparent;
 }
 
+.eeheader_transparent .left {
+    background-position: center;
+    background-size: 40%;
+    background-color: #999;
+    opacity: .5;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+}

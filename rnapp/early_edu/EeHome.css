@@ -2,6 +2,9 @@ html {
     background-color: #fafafa;
 }
 
+.eeroot{
+    padding-top: 47px;
+}
 
 .eehome_slider_div {
     background-size: cover;
@@ -42,7 +45,7 @@ html {
 
 
 .eehome_video_list,.eehome_audio_list{
-    padding: 20px 15px;
+    padding: 20px 10px;
     background: #fff;
 }
 .eehome_video_list h1,.eehome_audio_list h1{

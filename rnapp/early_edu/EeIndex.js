@@ -8,8 +8,8 @@ import { render } from 'react-dom';
 
 import {
     BaseComponent,
+    Navigator,
 } from '../comm';
-import Navigator from '../comm/view/Navigator.js';
 import EeHome from './EeHome.js';
 
 

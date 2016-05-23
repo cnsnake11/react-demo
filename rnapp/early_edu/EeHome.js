@@ -8,6 +8,7 @@ import Slider from 'react-slick';
 
 import {
     BaseComponent,
+    Loading,
 } from '../comm';
 
 import './EeHome.css';
@@ -31,7 +32,7 @@ export default class EeHome extends BaseComponent {
         let data = this.getState().initData;
 
         return (
-            <div id='EeHome'>
+            <div id='EeHome' className='eeroot'>
                 <EeHeader title='早教课堂' rightBtn='history'
                           rightBtnPress={() => alert('播放历史')} />
 
@@ -45,14 +46,14 @@ export default class EeHome extends BaseComponent {
 
     getMain(data) {
         if (!data) {
-            return '努力加载中.....'
+            return <Loading />;
         }
 
         return (
             <div>
-                <HomeSlider data={data.sliders}/>
-                <HomeVideoList data={data.videos} />
-                <HomeAudioList data={data.audios} />
+                <HomeSlider data={data.sliders} root={this}/>
+                <HomeVideoList data={data.videos} root={this}/>
+                <HomeAudioList data={data.audios} root={this}/>
             </div>
         );
     }
@@ -112,7 +113,7 @@ class HomeVideoList extends BaseComponent {
                         data.map((one, index) => {
                             let imgStyle={backgroundImage: `url(${one.img})`};
                             return (
-                                <li>
+                                <li onClick={() => {this.getRootObj().goVideo()}}>
                                     <div style={imgStyle}></div>
                                     <h2>{one.title}</h2>
                                     <h3>{one.count}次播放</h3>

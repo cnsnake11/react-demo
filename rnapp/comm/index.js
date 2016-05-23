@@ -5,6 +5,12 @@ import './base/normal.css';
 import React from 'react';
 import  'whatwg-fetch'; // 引入fetch，自动绑定到window，其它js不用引入了
 
+
+import BaseLogicObj from './base/BaseLogicObj';
+import BaseComponent from './base/BaseComponent';
+import Navigator from './view/Navigator';
+import Loading from './view/Loading';
+
 /**
  * 统一的对外发布出口
  * 业务使用只require这一个类即可
@@ -12,11 +18,12 @@ import  'whatwg-fetch'; // 引入fetch，自动绑定到window，其它js不用�
 let BbtReact = {
 
     // base
-    BaseLogicObj: require('./base/BaseLogicObj'),
-    BaseComponent: require('./base/BaseComponent'),
+    BaseLogicObj,
+    BaseComponent,
 
     // view
-    //Navigator: require('./view/Navigator'), // 不知道为什么不好用，有空再解决
+    Navigator,
+    Loading,
 
 };
 
