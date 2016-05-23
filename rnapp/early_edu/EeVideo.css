@@ -1,10 +1,16 @@
 .eevideo_detail {
+    position: relative;
 }
 .eevideo_detail .eevideo_preview{
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 220px;
     position: relative;
+}
+.eevideo_detail .eevideo_preview div{
+    height: 220px;
+    background: #000;
+    opacity: .2;
 }
 .eevideo_detail .eevideo_play {
     background-image: url("./img/play.png");
@@ -16,3 +22,16 @@
     margin-left: -40px;
     top: 70px;
 }
+.eevideo_detail .eevideo_title{
+    color: #ccc;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 18px 10px;
+    background: #fff;
+}
+.eevideo_detail .eevideo_title h1 {
+    color: #222;
+    font-size: 18px;
+    font-weight: normal;
+}
+

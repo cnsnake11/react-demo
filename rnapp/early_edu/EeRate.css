@@ -1,0 +1,30 @@
+.eerate {
+    background: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+.eerate h1 {
+    color: #5DCBDB;
+    font-size: 12px;
+    text-align: left;
+    padding: 0 0 5px 10px;
+}
+.eerate .eerate_rate {
+    display: inline-block;
+    background: #4CCCCF;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 15px;
+    padding: 2px 10px;
+    position: relative;
+    top: -10px;
+}
+
+.eestar{
+    background: url("./img/star-0.png") center no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 10px;
+}

@@ -1,0 +1,32 @@
+.eecomment {
+    background: #fff;
+    padding: 18px 10px;
+}
+.eecomment h1 {
+    color: #5DCBDB;
+    font-size: 12px;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.eecommentlist li{
+    padding:10px 0 10px 40px;
+    position: relative;
+}
+.eecommentlist li img{
+    left: 0;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+.eecommentlist li h2 {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+    margin-bottom: 2px;
+}
+.eecommentlist li h3 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #222;
+}

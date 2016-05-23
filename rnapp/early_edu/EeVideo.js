@@ -11,6 +11,9 @@ import {
 } from '../comm';
 
 import EeHeader from './EeHeader.js';
+import EeRate from './EeRate.js';
+import EeComment from './EeComment.js';
+import EeRecVideo from './EeRecVideo.js';
 import EeVideoObj from './EeVideoObj.js';
 import './EeVideo.css';
 
@@ -49,6 +52,9 @@ export default  class EeVideo extends BaseComponent {
         return (
           <div>
               <EeVideoDetail root={this} data={initData.video}/>
+              <EeRate root={this}/>
+              <EeRecVideo root={this} data={initData.video2}/>
+              <EeComment root={this} data={initData}/>
           </div>
         );
     }
@@ -61,14 +67,16 @@ class EeVideoDetail extends BaseComponent{
         let imgStyle={backgroundImage: `url(${data.img})`};
 
         return (
-            <div className='eevideo_detail'>
+            <div className='eevideo_detail' style={{marginBottom: '10px'}}>
 
-                <div className='eevideo_preview' style={imgStyle}></div>
+                <div className='eevideo_preview' style={imgStyle}>
+                    <div></div>
+                </div>
                 <div className='eevideo_play'></div>
 
                 <div className='eevideo_title'>
                     <h1>{data.title}</h1>
-                    综合分值,,,,,{data.counts}次播放
+                    综合分值,,,,,&nbsp;&nbsp;&nbsp;&nbsp;{data.counts}次播放
                 </div>
             </div>
         );
