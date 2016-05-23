@@ -13,11 +13,11 @@
 }
 
 .eeheader .back {
-    background: url("./img/back.png") no-repeat left;
+    background: url("./img/back.png") no-repeat center;
 }
 
 .eeheader .history {
-    background: url("./img/clock.png") no-repeat right;
+    background: url("./img/clock.png") no-repeat center;
 }
 
 .eeheader .left,.eeheader .right{
@@ -28,19 +28,28 @@
 }
 
 .eeheader .left {
-    float: left;
-    margin-left: 12px;
+    position: absolute;
+    left: 0;
 }
 
 .eeheader .right {
-    float: right;
-    margin-right: 12px;
+    position: absolute;
+    right: 0;
 }
+.eeheader .title {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 40px;
+    text-overflow: ellipsis;
+}
+
+
 .eeheader_transparent {
     background: transparent;
 }
 
 .eeheader_transparent .left {
+    margin-left: 10px;
     background-position: center;
     background-size: 40%;
     background-color: #999;

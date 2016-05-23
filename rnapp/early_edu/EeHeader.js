@@ -24,8 +24,8 @@ export default class EeHeader extends BaseComponent {
         return (
             <div className={className}>
                 <div className='left back' onClick={() => nav.pop()}></div>
-                {this.props.title}
                 {this._getRightBtn()}
+                <div className='title'>{this.props.title}</div>
             </div>
         );
     }

@@ -145,7 +145,7 @@ class HomeAudioList extends BaseComponent {
                         data.map((one, index) => {
                             let imgStyle={backgroundImage: `url(${one.img})`};
                             return (
-                                <li>
+                                <li onClick={() => {this.getRootObj().goAudio()}}>
                                     <div style={imgStyle}></div>
                                     <h2>{one.title}</h2>
                                 </li>
