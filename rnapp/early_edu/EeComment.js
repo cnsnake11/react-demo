@@ -21,9 +21,25 @@ export default  class EeComment extends BaseComponent {
             <div className='eecomment'>
                 <h1>评论（共{data.comment.counts}条）</h1>
 
+                <EeWantComment root={this} data={data.user} />
+
                 <EeCommentList root={this} data={data.comments} />
 
                 <EeButton title='查看全部评论' onClick={() => alert('全部评论')}/>
+            </div>
+        );
+    }
+}
+
+class EeWantComment extends BaseComponent {
+    render() {
+
+        let data = this.getProps().data;
+
+        return (
+            <div className='eewantcomment'>
+                <img src={data.icon}/>
+                <div>我来说几句</div>
             </div>
         );
     }
