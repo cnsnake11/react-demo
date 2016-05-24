@@ -4,12 +4,14 @@
 //引入的顺序要求是 1第三方框架 2自研通用框架 3业务， 这样可以保证打包顺序
 
 import React from 'react';
-import { Slider, Slides, PrevArrow, NextArrow, Dots } from 'react-flex-slick';
 
 import {
     BaseComponent,
     Loading,
+    ReactFlexSlick,
 } from '../comm';
+
+let { Slider, Slides, Dots } = ReactFlexSlick;
 
 import './EeHome.css';
 import EeHomeObj from './EeHomeObj.js';
@@ -58,8 +60,6 @@ export default class EeHome extends BaseComponent {
     }
 }
 
-
-
 class HomeSlider extends BaseComponent {
     shouldComponentUpdate() {
         return false;
@@ -74,21 +74,18 @@ class HomeSlider extends BaseComponent {
         }
 
         return (
-            <Slider infinite swipe draggable >
-                <PrevArrow />
+            <Slider infinite swipe draggable autoPlay>
+                <div></div>
                  <Slides {...this.props}  >
                      {
                          data.map((one) => {
                              let slideStyle = {
-                                 width: 540,
-                                 height: 125,
-                                 backgroundColor: 'slateblue',
+                                 width: '100%',
                                  color: 'white',
                                  display: 'flex',
                                  justifyContent: 'center',
                                  alignItems: 'center'
                              };
-                             //let style={backgroundImage: `url(${one})`};
                              slideStyle.backgroundImage =  `url(${one})`;
                              return (
                                  <div style={slideStyle} className='eehome_slider_div'>
@@ -98,8 +95,8 @@ class HomeSlider extends BaseComponent {
                          })
                          }
                 </Slides>
-                <NextArrow />
-                 <Dots />
+                <div></div>
+                <Dots />
             </Slider>
         );
     }

@@ -21,28 +21,16 @@ html {
     font-size: 18px;
     font-weight: normal;
 }
-#EeHome .slick-slider {
-    margin: 0;
-}
 #EeHome .slick-dots{
-    bottom: 10px;
+    justify-content: flex-end !important;
+    margin-top: -30px;
     right: 10px;
-    width: auto;
+    z-index: 2;
+    position: relative;
 }
-#EeHome .slick-dots li{
-    margin: 0;
+#EeHome .slick-dots div{
+    background: #fff !important;
 }
-#EeHome .slick-dots li, .slick-dots li button{
-    width: 13px;
-}
-#EeHome .slick-dots li button:before{
-    color: #fff;
-    font-size: 22px;
-}
-#EeHome .slick-dots li.slick-active button:before{
-    opacity: 1;
-}
-
 
 .eehome_video_list,.eehome_audio_list{
     padding: 20px 10px;
