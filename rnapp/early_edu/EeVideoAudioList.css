@@ -1,18 +1,15 @@
 .eetab {
     border-bottom: 1px solid #eee;
     background: #fff;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
 }
 
 .eetab li {
     width: 50%;
     display: inline-block;
     text-align: center;
-}
-
-.eetab li div {
-    height: 46px;
-    line-height: 46px;
-    display: inline-block;
 }
 
 .eetab li div {

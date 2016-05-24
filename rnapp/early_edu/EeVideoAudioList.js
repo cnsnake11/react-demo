@@ -120,10 +120,13 @@ class List extends BaseComponent {
 class EeTab extends BaseComponent {
     render() {
         return (
-            <ul className='eetab'>
-                <EeTabBtn title='播放最多' name='count' {...this.getProps()}/>
-                <EeTabBtn title='最新上线' name='time' {...this.getProps()}/>
-            </ul>
+            <div>
+                <ul className='eetab'>
+                    <EeTabBtn title='播放最多' name='count' {...this.getProps()}/>
+                    <EeTabBtn title='最新上线' name='time' {...this.getProps()}/>
+                </ul>
+                <div style={{height: '44px'}}></div>
+            </div>
         );
     }
 }
