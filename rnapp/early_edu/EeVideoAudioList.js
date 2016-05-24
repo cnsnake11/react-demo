@@ -30,6 +30,8 @@ export default  class EeVideoAudioList extends BaseComponent {
             <div style={{height: '100%', overflow: 'auto'}}
                 onScroll={(e) => {
 
+                    this.scroller = e.target;
+
                     if (this.getState().tabActive === 'count') {
                         this.list_count && this.list_count.exeWhenScroll(e);
                     } else {
@@ -41,11 +43,22 @@ export default  class EeVideoAudioList extends BaseComponent {
                 <EeHeader title='早教视频'/>
                 <EeTab root={this}
                        onClick={(name) => {
+
+                            if (this.scroller) {
+                                this['scrollTop_'+this.getState().tabActive] = this.scroller.scrollTop;
+                            }
+
+                            this.scroller.scrollTop = 0;
+
                             let state = {
                                 tabActive: name,
                             };
                             state['canInit_' + name] = true;
                             this.setState(state);
+
+                            if (this.scroller && this['scrollTop_'+name]) {
+                                this.scroller.scrollTop = this['scrollTop_'+name];
+                            }
                        }}/>
 
                 <ListWrapper name='count'
