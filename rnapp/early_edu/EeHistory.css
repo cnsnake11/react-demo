@@ -1,0 +1,41 @@
+.eehistory {
+    padding: 15px 10px 0 10px;
+}
+
+.eehistory li {
+    margin-bottom: 12px;
+}
+.eehistory .left {
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 100px;
+     width: 40%;
+     float: left;
+}
+
+.eehistory .right {
+    float: right;
+    width: 60%;
+}
+
+.eehistory h1 {
+    color: #222;
+    font-size: 16px;
+    padding-left: 5px;
+    max-height: 50px;
+    overflow: hidden;
+    font-weight: normal;
+}
+.eehistory h2 {
+    color: #ccc;
+    font-size: 12px;
+    padding-left: 5px;
+    font-weight: normal;
+}
+.eehistory h3 {
+    color: #4CCCCF;
+    font-size: 12px;
+    padding-left: 5px;
+    font-weight: normal;
+}

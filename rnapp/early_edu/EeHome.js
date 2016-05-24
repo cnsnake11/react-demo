@@ -17,6 +17,7 @@ import './EeHome.css';
 import EeHomeObj from './EeHomeObj.js';
 import EeHeader from './EeHeader.js';
 import EeButton from './EeButton.js';
+import EeHistory from './EeHistory.js';
 
 export default class EeHome extends BaseComponent {
 
@@ -36,7 +37,12 @@ export default class EeHome extends BaseComponent {
         return (
             <div id='EeHome' >
                 <EeHeader title='早教课堂' rightBtn='history'
-                          rightBtnPress={() => alert('播放历史')} />
+                          rightBtnPress={() => {
+                            nav.push({
+                                name: 'EeHistory',
+                                page: () => <EeHistory />
+                            });
+                          }} />
                 {
                     this.getMain(data)
                 }
