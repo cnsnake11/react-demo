@@ -1,13 +1,13 @@
 
-.eelistrow {
+.eevideoaudiorow {
     padding: 15px 10px 0 10px;
     background: #fff;
 }
 
-.eelistrow li {
+.eevideoaudiorow li {
     margin-bottom: 12px;
 }
-.eelistrow .left {
+.eevideoaudiorow .left {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,12 +17,12 @@
     position: relative;
 }
 
-.eelistrow .right {
+.eevideoaudiorow .right {
     float: right;
     width: 60%;
 }
 
-.eelistrow h1 {
+.eevideoaudiorow h1 {
     color: #222;
     font-size: 16px;
     padding-left: 5px;
@@ -30,19 +30,19 @@
     overflow: hidden;
     font-weight: normal;
 }
-.eelistrow h2 {
+.eevideoaudiorow h2 {
     color: #ccc;
     font-size: 12px;
     padding-left: 5px;
     font-weight: normal;
 }
-.eelistrow h3 {
+.eevideoaudiorow h3 {
     color: #4CCCCF;
     font-size: 12px;
     padding-left: 5px;
     font-weight: normal;
 }
-.eelistrow .eelistrow_fastplay {
+.eevideoaudiorow .eevideoaudiorow_fastplay {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -53,7 +53,7 @@
     margin-left: 5px;
 }
 
-.eelistrow .left div{
+.eevideoaudiorow .left div{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,13 +62,13 @@
     bottom: 5px;
 }
 
-.eelistrow .eelistrow_audio{
+.eevideoaudiorow .eevideoaudiorow_audio{
     height: 11px;
     width: 14px;
     background-image: url("./img/audio.png");
 }
 
-.eelistrow .eelistrow_video{
+.eevideoaudiorow .eevideoaudiorow_video{
     height: 11px;
     width: 13px;
     background-image: url("./img/video.png");

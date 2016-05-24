@@ -1,0 +1,31 @@
+.eetab {
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+.eetab li {
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.eetab li div {
+    height: 46px;
+    line-height: 46px;
+    display: inline-block;
+}
+
+.eetab li div {
+    height: 44px;
+    line-height: 44px;
+    display: inline-block;
+    color: #999;
+    font-size: 14px;
+    padding: 0 20px;
+    margin-bottom: -1px;
+}
+
+.eetab li.eetab_active div {
+    color: #4CCCCF;
+    border-bottom: 1px solid #4CCCCF;
+}

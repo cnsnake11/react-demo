@@ -9,9 +9,9 @@ import {
     BaseComponent,
 } from '../comm';
 
-import './EeListRow.css';
+import './EeVideoAudioRow.css';
 
-export default  class EeListRow extends BaseComponent {
+export default  class EeVideoAudioRow extends BaseComponent {
     render() {
 
         let one = this.getProps().data;
@@ -19,7 +19,7 @@ export default  class EeListRow extends BaseComponent {
         return (
             <li>
                 <div style={{backgroundImage: `url(${one.img})`}} className='left'>
-                    <div className={'eelistrow_' + one.type} ></div>
+                    <div className={'eevideoaudiorow_' + one.type} ></div>
                 </div>
                 <div className='right'>
                     <h1>{this.getProps().h1}</h1>
@@ -28,7 +28,7 @@ export default  class EeListRow extends BaseComponent {
                         {this.getProps().h3}
                         {
                             this.getProps().fastplay === true ?
-                                <div className='eelistrow_fastplay'></div>
+                                <div className='eevideoaudiorow_fastplay'></div>
                                 :
                                 null
                         }

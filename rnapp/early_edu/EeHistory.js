@@ -12,7 +12,7 @@ import {
 
 import EeHistoryObj from './EeHistoryObj';
 import EeHeader from './EeHeader';
-import EeListRow from './EeListRow.js';
+import EeVideoAudioRow from './EeVideoAudioRow.js';
 
 
 export default  class EeHistory extends BaseComponent {
@@ -50,12 +50,12 @@ export default  class EeHistory extends BaseComponent {
         }
 
         return (
-            <ul className='eelistrow'>
+            <ul className='eevideoaudiorow'>
                 {
                     this.getState().listData.map((one) => {
 
                         return (
-                            <EeListRow data={one} h1={one.title} h2={one.time}
+                            <EeVideoAudioRow data={one} h1={one.title} h2={one.time}
                                 h3={'上次你看到' + one.lasttime} fastplay={true}/>
                         );
                     })
