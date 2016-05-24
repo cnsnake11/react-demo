@@ -46,17 +46,18 @@ export default  class EeVideoAudioList extends BaseComponent {
 
                             if (this.scroller) {
                                 this['scrollTop_'+this.getState().tabActive] = this.scroller.scrollTop;
+                                console.log('记录上一次：scrollTop_'+this.getState().tabActive +'='+this['scrollTop_'+this.getState().tabActive]);
+                                this.scroller.scrollTop = 0;
                             }
 
-                            this.scroller.scrollTop = 0;
-
                             let state = {
-                                tabActive: name,
+                                tabActive: name
                             };
                             state['canInit_' + name] = true;
                             this.setState(state);
 
                             if (this.scroller && this['scrollTop_'+name]) {
+                                console.log('设置这一次：scrollTop_'+name +'='+ this['scrollTop_'+name]);
                                 this.scroller.scrollTop = this['scrollTop_'+name];
                             }
                        }}/>
