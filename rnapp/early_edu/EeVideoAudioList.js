@@ -26,29 +26,12 @@ export default  class EeVideoAudioList extends BaseComponent {
     }
 
     render() {
+        let title = this.getProps().type === 'video' ? '早教视频' : '早教音频';
         return (
-            <div style={{height: '100%', overflow: 'auto'}}
-                onScroll={(e) => {
-
-                    this.scroller = e.target;
-
-                    if (this.getState().tabActive === 'count') {
-                        this.list_count && this.list_count.exeWhenScroll(e);
-                    } else {
-                        this.list_time && this.list_time.exeWhenScroll(e);
-                    }
-
-                }}
-            >
-                <EeHeader title='早教视频'/>
+            <div style={{height: '100%'}}>
+                <EeHeader title={title} space={false}/>
                 <EeTab root={this}
                        onClick={(name) => {
-
-                            if (this.scroller) {
-                                this['scrollTop_'+this.getState().tabActive] = this.scroller.scrollTop;
-                                console.log('记录上一次：scrollTop_'+this.getState().tabActive +'='+this['scrollTop_'+this.getState().tabActive]);
-                                this.scroller.scrollTop = 0;
-                            }
 
                             let state = {
                                 tabActive: name
@@ -56,10 +39,6 @@ export default  class EeVideoAudioList extends BaseComponent {
                             state['canInit_' + name] = true;
                             this.setState(state);
 
-                            if (this.scroller && this['scrollTop_'+name]) {
-                                console.log('设置这一次：scrollTop_'+name +'='+ this['scrollTop_'+name]);
-                                this.scroller.scrollTop = this['scrollTop_'+name];
-                            }
                        }}/>
 
                 <ListWrapper name='count'
@@ -97,28 +76,40 @@ class List extends BaseComponent {
             listData: []
         };
         let name = this.getProps().name;
+        let type = this.getRootProps().type;
         this.obj = new EeVideoAudioListObj(this);
-        this.obj.init(name);
-        this.getRoot()['list_' + name] = this.obj.list;
+        this.obj.init(name, type);
     }
 
 
     render() {
 
+        let space = <div style={{height: '106px'}}></div>;/*106=47+44+15*/
         let listData = this.getState().listData;
 
         if (listData.length === 0) {
-            return <Loading />;
+            return (
+                <div>
+                    {space}
+                    <Loading />
+                </div>
+            );
         }
 
-        let style;
+        let style = {height: '100%', overflow: 'auto', background: '#fff', padding: '0 10px'};
         if (this.getProps().show === false) {
-            style = {
-                display: 'none'
-            }
+            style.display = 'none';
         }
+
         return (
-            <ul className='eevideoaudiorow' style={style}>
+            <ul className='eevideoaudiorow' style={style}
+                onScroll={(e) => {
+
+                    this.scroller = e.target;
+                    this.obj.list.exeWhenScroll(e);
+
+                }}>
+                {space}
                 {
                     listData.map((one) => <EeVideoAudioRow data={one}
                                                        h1={one.title}
@@ -133,14 +124,12 @@ class List extends BaseComponent {
 
 class EeTab extends BaseComponent {
     render() {
+        // 47是header的高度
         return (
-            <div>
-                <ul className='eetab'>
-                    <EeTabBtn title='播放最多' name='count' {...this.getProps()}/>
-                    <EeTabBtn title='最新上线' name='time' {...this.getProps()}/>
-                </ul>
-                <div style={{height: '44px'}}></div>
-            </div>
+            <ul className='eetab' style={{top: '47px'}}>
+                <EeTabBtn title='播放最多' name='count' {...this.getProps()}/>
+                <EeTabBtn title='最新上线' name='time' {...this.getProps()}/>
+            </ul>
         );
     }
 }

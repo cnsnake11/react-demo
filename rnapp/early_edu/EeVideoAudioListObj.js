@@ -14,9 +14,10 @@ export default class EeVideoAudioListObj extends BaseLogicObj {
         super(root);
     }
 
-    init(name) {
+    init(name, type) {
 
         this.name = name;
+        this.type = type;
 
         this.list = new ListViewApi({
             onReachEndNoLoading: () => {

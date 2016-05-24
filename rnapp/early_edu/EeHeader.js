@@ -35,7 +35,7 @@ export default class EeHeader extends BaseComponent {
     }
 
     _getHeightDiv() {
-        if (this.getProps().theme === 'transparent') {
+        if (this.getProps().theme === 'transparent' || this.getProps().space === false) {
             return null;
         }
         return <div style={{height: '47px'}}></div>;

@@ -18,6 +18,7 @@ import EeHomeObj from './EeHomeObj.js';
 import EeHeader from './EeHeader.js';
 import EeButton from './EeButton.js';
 import EeHistory from './EeHistory.js';
+import EeVideoAudioList from './EeVideoAudioList.js';
 
 export default class EeHome extends BaseComponent {
 
@@ -134,7 +135,12 @@ class HomeVideoList extends BaseComponent {
                     <div style={{clear: 'both'}}></div>
                 </ul>
 
-                <EeButton title='更多育儿视频' onClick={() => alert('更多音频')} />
+                <EeButton title='更多育儿视频' onClick={() => {
+                    nav.push({
+                        name: 'EeVideoAudioList',
+                        page: () => <EeVideoAudioList type='video' />
+                    });
+                }} />
             </div>
         );
     }
@@ -165,7 +171,12 @@ class HomeAudioList extends BaseComponent {
                     <div style={{clear: 'both'}}></div>
                 </ul>
 
-                <EeButton title='更多育儿音频' onClick={() => alert('更多音频')}/>
+                <EeButton title='更多育儿音频' onClick={() => {
+                    nav.push({
+                        name: 'EeVideoAudioList',
+                        page: () => <EeVideoAudioList type='audio' />
+                    });
+                }} />
             </div>
         );
     }
