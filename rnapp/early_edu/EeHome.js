@@ -116,7 +116,7 @@ class HomeVideoList extends BaseComponent {
         let data = this.getProps().data;
 
         return (
-            <div className='eehome_video_list' style={{marginBottom: '10px'}}>
+            <div className='eehome_video_list' style={{margin: '10px 0'}}>
                 <h1>早教视频</h1>
 
                 <ul>
