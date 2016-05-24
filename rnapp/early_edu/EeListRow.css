@@ -1,0 +1,75 @@
+
+.eelistrow {
+    padding: 15px 10px 0 10px;
+    background: #fff;
+}
+
+.eelistrow li {
+    margin-bottom: 12px;
+}
+.eelistrow .left {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 40%;
+    float: left;
+    position: relative;
+}
+
+.eelistrow .right {
+    float: right;
+    width: 60%;
+}
+
+.eelistrow h1 {
+    color: #222;
+    font-size: 16px;
+    padding-left: 5px;
+    max-height: 50px;
+    overflow: hidden;
+    font-weight: normal;
+}
+.eelistrow h2 {
+    color: #ccc;
+    font-size: 12px;
+    padding-left: 5px;
+    font-weight: normal;
+}
+.eelistrow h3 {
+    color: #4CCCCF;
+    font-size: 12px;
+    padding-left: 5px;
+    font-weight: normal;
+}
+.eelistrow .eelistrow_fastplay {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("./img/fastplay.png");
+    width: 14px;
+    height: 10px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.eelistrow .left div{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+.eelistrow .eelistrow_audio{
+    height: 11px;
+    width: 14px;
+    background-image: url("./img/audio.png");
+}
+
+.eelistrow .eelistrow_video{
+    height: 11px;
+    width: 13px;
+    background-image: url("./img/video.png");
+}

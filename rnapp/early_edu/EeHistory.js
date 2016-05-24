@@ -10,9 +10,9 @@ import {
     Loading,
 } from '../comm';
 
-import './EeHistory.css';
 import EeHistoryObj from './EeHistoryObj';
 import EeHeader from './EeHeader';
+import EeListRow from './EeListRow.js';
 
 
 export default  class EeHistory extends BaseComponent {
@@ -50,20 +50,13 @@ export default  class EeHistory extends BaseComponent {
         }
 
         return (
-            <ul className='eehistory'>
+            <ul className='eelistrow'>
                 {
                     this.getState().listData.map((one) => {
 
                         return (
-                            <li>
-                                <div style={{backgroundImage: `url(${one.img})`}} className='left'></div>
-                                <div className='right'>
-                                    <h1>{one.title}</h1>
-                                    <h2>{one.time}</h2>
-                                    <h3>上次你看到{one.lasttime}</h3>
-                                </div>
-                                <div style={{clear: 'both'}}></div>
-                            </li>
+                            <EeListRow data={one} h1={one.title} h2={one.time}
+                                h3={'上次你看到' + one.lasttime} fastplay={true}/>
                         );
                     })
                 }

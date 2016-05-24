@@ -52,7 +52,7 @@ export default  class EeCommentList extends BaseComponent {
         }
 
         return (
-            <div style={{padding: '15px 10px 0 10px'}}>
+            <div style={{padding: '15px 10px 0 10px', background: '#fff'}}>
 
                 <span style={{fontSize: '12px', color: '#999'}}
                     >评论：{initData.comment.counts}</span>
