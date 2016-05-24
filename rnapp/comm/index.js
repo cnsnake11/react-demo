@@ -7,6 +7,7 @@ import  'whatwg-fetch'; // 引入fetch，自动绑定到window，其它js不用�
 
 import BaseLogicObj from './base/BaseLogicObj';
 import BaseComponent from './base/BaseComponent';
+import ListViewApi from './api/ListViewApi';
 import Navigator from './view/Navigator';
 import Loading from './view/Loading';
 
@@ -21,6 +22,9 @@ let BbtReact = {
     // base
     BaseLogicObj,
     BaseComponent,
+
+    //api
+    ListViewApi,
 
     // view
     Navigator,

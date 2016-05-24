@@ -7,6 +7,7 @@ import BaseComponent from '../base/BaseComponent';
 
 let style = {
     textAlign: 'center',
+    padding: '20px'
 };
 
 export default class Loading extends BaseComponent {

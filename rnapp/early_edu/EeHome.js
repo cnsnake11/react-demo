@@ -37,7 +37,6 @@ export default class EeHome extends BaseComponent {
             <div id='EeHome' >
                 <EeHeader title='早教课堂' rightBtn='history'
                           rightBtnPress={() => alert('播放历史')} />
-                <div className='eeheader_height'></div>
                 {
                     this.getMain(data)
                 }

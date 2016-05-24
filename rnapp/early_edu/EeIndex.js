@@ -29,7 +29,7 @@ class EeIndex extends BaseComponent {
     _getInitRoute() {
         return {
             name: 'home',
-            page: () => <EeHome />
+            page: () => <EeCommentList />
         };
     }
 }

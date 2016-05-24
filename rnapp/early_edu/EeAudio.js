@@ -31,7 +31,7 @@ export default  class EeAudio extends BaseComponent {
     render() {
 
         return (
-            <div className='eeroot'>
+            <div>
                 <EeHeader title='如何解决家中有两包吃醋打架的问题'/>
                 {
                     this.getMain()

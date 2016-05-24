@@ -22,12 +22,23 @@ export default class EeHeader extends BaseComponent {
         }
 
         return (
-            <div className={className}>
-                <div className='left back' onClick={() => nav.pop()}></div>
-                {this._getRightBtn()}
-                <div className='title'>{this.props.title}</div>
+            <div>
+                <div className={className}>
+                    <div className='left back' onClick={() => nav.pop()}></div>
+                    {this._getRightBtn()}
+                    <div className='title'>{this.props.title}</div>
+                </div>
+                {this._getHeightDiv()}
             </div>
+
         );
+    }
+
+    _getHeightDiv() {
+        if (this.getProps().theme === 'transparent') {
+            return null;
+        }
+        return <div style={{height: '47px'}}></div>;
     }
 
     _getRightBtn() {
