@@ -28,6 +28,7 @@
     padding-left: 5px;
     max-height: 70px;
     overflow: hidden;
+    font-weight: normal;
 }
 .eerecvideo h3 {
     color: #ccc;
