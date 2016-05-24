@@ -14,36 +14,39 @@ export default class ListViewApi {
         this.noData = false;
 
         this.wrapper = null;
-        this.loadingMsg = document.createElement("div");
-        this.loadingMsg.className = 'listview_loading_msg';
+        this.loadingMsg = null;
+    }
+
+    _setLoadingMsg(msg) {
+
+        if (!this.wrapper) {
+            return;
+        }
+
+        if (!this.loadingMsg) {
+            this.loadingMsg = document.createElement("div");
+            this.loadingMsg.className = 'listview_loading_msg';
+            this.wrapper.appendChild(this.loadingMsg);
+        }
+
+        this.loadingMsg.innerHTML = msg;
     }
 
     startQuery() {
         this.loading = true;
-        if (this.wrapper) {
-            this.wrapper.appendChild(this.loadingMsg);
-            this.loadingMsg.innerHTML = '努力加载中.....';
-        }
+        this._setLoadingMsg('努力加载中...');
 
     }
 
     endQuery() {
         this.loading = false;
         this.curPage = this.curPage + 1;
-
-        if (this.wrapper) {
-            this.wrapper.appendChild(this.loadingMsg);
-            this.loadingMsg.innerHTML = ' ';
-        }
+        this._setLoadingMsg(' ');
     }
 
     setNoData() {
         this.noData = true;
-
-        if (this.wrapper) {
-            this.wrapper.appendChild(this.loadingMsg);
-            this.loadingMsg.innerHTML = '没有数据了~';
-        }
+        this._setLoadingMsg('没有更多啦~');
     }
 
     exeWhenScroll(e) {
@@ -53,7 +56,7 @@ export default class ListViewApi {
         maxScroll = panel.scrollHeight - panel.offsetHeight;
         if(scrollTop >= maxScroll){
 
-            console.log("滚动到底部了 ");
+            // console.log("滚动到底部了 ");
             this.opt.onReachEnd && this.opt.onReachEnd();
 
             if (this.noData === true) {
