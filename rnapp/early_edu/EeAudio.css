@@ -58,10 +58,10 @@
     -webkit-animation: eeaudio_rotate 2s linear infinite;
 }
 @keyframes eeaudio_rotate {
-    from {-webkit-transform: rotateZ(0deg);}
-    to {-webkit-transform: rotateZ(360deg);}
+    from {-webkit-transform: scale(0.5);}
+    to {-webkit-transform: scale(1);}
 }
 @-webkit-keyframes eeaudio_rotate {
-    from {-webkit-transform: rotateZ(0deg);}
-    to {-webkit-transform: rotateZ(360deg);}
+    from {-webkit-transform: scale(0.5);}
+    to {-webkit-transform: scale(1);}
 }
