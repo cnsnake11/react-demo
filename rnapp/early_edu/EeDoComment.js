@@ -16,6 +16,25 @@ import './EeDoComment.css';
 
 
 export default  class EeDoComment extends BaseComponent {
+
+    componentWillMount() {
+        this.maxLength = 300;
+        this.state = {
+            content: ''
+        }
+    }
+
+
+    validate() {
+
+        let title = this.getState().content;
+
+        if (title && title.trim() && title.length <= this.maxLength) {
+            return true;
+        }
+        return false;
+    }
+
     render() {
 
         return (
@@ -24,13 +43,40 @@ export default  class EeDoComment extends BaseComponent {
                 <div className='eeheader_height'></div>
                 <div className='eedocomment'>
                     <div className='eedocomment_wrapper'>
-                        <textarea placeholder="请输入评论内容"></textarea>
-                        <div className='eedocomment_rule'>0/300</div>
+                        <textarea placeholder="请输入评论内容" onChange={(e) => {
+                            this.setState({content: e.target.value});
+                        }}></textarea>
+                        <MaxLengthMsg maxLegth={this.maxLength} str={this.state.content}/>
                     </div>
-                    <EeButton title='提交' theme='blue' />
+                    {
+                        this.validate() ?
+                            <EeButton title='提交' theme='blue' />
+                            :
+                            <EeButton title='提交' theme='gray' />
+                    }
+
                 </div>
             </div>
 
         );
     }
+}
+
+class MaxLengthMsg extends BaseComponent {
+
+    render() {
+
+        let str = this.props.str;
+        let maxLength = this.props.maxLegth / 1;
+
+        let spanStyle;
+        if (str && str.trim() && str.length > maxLength) {// 超出了
+            spanStyle = {color: 'red'};
+        }
+
+        return (
+            <div className='eedocomment_rule'><span style={spanStyle}>{str.length}</span>/{maxLength}</div>
+        );
+    }
+
 }

@@ -10,4 +10,11 @@
 .eebutton_blue {
     color: #fff;
     background: #7FDCDE;
+    border: 1px solid #7FDCDE;
+}
+
+.eebutton_gray {
+    color: #fff;
+    background: #C9C9C9;
+    border: 1px solid #C9C9C9;
 }
