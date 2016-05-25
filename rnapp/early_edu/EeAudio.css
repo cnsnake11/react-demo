@@ -4,7 +4,7 @@
 .eeaudio_detail .eeaudio_preview{
     background-repeat: no-repeat;
     background-size: cover;
-    height: 220px;
+    height: 200px;
     position: relative;
 }
 
@@ -52,4 +52,16 @@
     width: 40%;
     height: 2px;
     background: #4CCCCF;
+}
+
+.eeaudio_player_rotate {
+    -webkit-animation: eeaudio_rotate 2s linear infinite;
+}
+@keyframes eeaudio_rotate {
+    from {-webkit-transform: rotateZ(0deg);}
+    to {-webkit-transform: rotateZ(360deg);}
+}
+@-webkit-keyframes eeaudio_rotate {
+    from {-webkit-transform: rotateZ(0deg);}
+    to {-webkit-transform: rotateZ(360deg);}
 }

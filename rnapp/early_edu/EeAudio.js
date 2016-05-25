@@ -21,7 +21,7 @@ export default  class EeAudio extends BaseComponent {
 
     componentWillMount() {
         this.state = {
-            initData: null,
+            initData: null
         };
 
         this.obj = new EeAudioObj(this);
@@ -59,10 +59,37 @@ export default  class EeAudio extends BaseComponent {
 }
 
 class EeAudioDetail extends BaseComponent{
+
+    componentWillMount() {
+
+        this.state = {
+            canplay: false,
+            duration: 0,
+            playing: false
+        };
+
+        this.audioId = ''+Math.random();
+    }
+
+    componentDidMount() {
+        let a = this.audio = document.getElementById(this.audioId);
+        a.oncanplay = () => {
+            this.setState({
+                canplay: true,
+                duration: a.duration
+            });
+        };
+    }
+
     render() {
 
         let data = this.getProps().data;
         let imgStyle={backgroundImage: `url(${data.img})`};
+
+        let clsIcon = '';
+        if (this.getState().playing === true) {
+            clsIcon = 'eeaudio_player_rotate';
+        }
 
         return (
             <div className='eeaudio_detail' style={{marginBottom: '10px'}}>
@@ -72,15 +99,33 @@ class EeAudioDetail extends BaseComponent{
                 <div className='eeaudio_player'>
                     <h1>听听宝宝树的专家们对这个问题的解释吧：</h1>
 
-                    <div className='eeaudio_player_icon'></div>
+                       {
+                        this.getState().canplay === true ?
+                            <div className={'eeaudio_player_icon ' + clsIcon} onClick={() => {
+                                let a = this.audio;
+                                if (this.getState().playing === false) {
+                                    a.play();
+                                    this.setState({playing: true});
+                                } else {
+                                    a.pause();
+                                    this.setState({playing: false});
+                                }
+
+                            }}></div>
+                            :
+                            null
+                        }
 
                     <div className='eeaudio_player_status'>
-                        <span className='left'>1:02:00</span>
+                        <span className='left'>00:00</span>
                         <div className='eeaudio_player_progress'><div></div></div>
-                        <span className='right'>1:08:08</span>
+                        <span className='right'>{this.getState().duration}</span>
                     </div>
 
                 </div>
+
+                <audio src={data.audio} id={this.audioId}></audio>
+
             </div>
         );
     }
