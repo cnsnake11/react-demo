@@ -20,5 +20,36 @@
     background-size: contain;
     width: 80px;
     height: 80px;
-    margin: 0 auto;
+    margin: 10px auto;
+}
+
+.eeaudio_player_status {
+    margin: 30px 10px;
+    padding: 0 50px;
+    position: relative;
+}
+
+.eeaudio_player_status span{
+    position: absolute;
+    top: -9px;
+    color: #ccc;
+}
+
+.eeaudio_player_status .left{
+    left: 0;
+}
+
+.eeaudio_player_status .right{
+    right: 0;
+}
+
+.eeaudio_player_progress {
+    height: 2px;
+    background: #D8D8D8;
+}
+
+.eeaudio_player_progress div{
+    width: 40%;
+    height: 2px;
+    background: #4CCCCF;
 }

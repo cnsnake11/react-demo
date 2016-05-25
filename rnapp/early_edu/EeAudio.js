@@ -74,10 +74,10 @@ class EeAudioDetail extends BaseComponent{
 
                     <div className='eeaudio_player_icon'></div>
 
-                    <div>
-                        02:00
-                        <div>进度条</div>
-                        08:08
+                    <div className='eeaudio_player_status'>
+                        <span className='left'>1:02:00</span>
+                        <div className='eeaudio_player_progress'><div></div></div>
+                        <span className='right'>1:08:08</span>
                     </div>
 
                 </div>
