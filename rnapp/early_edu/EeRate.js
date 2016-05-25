@@ -17,7 +17,8 @@ export default  class EeRate extends BaseComponent {
 
     componentWillMount() {
         this.state = {
-            point: 0
+            point: 0,
+            finish: false,
         };
     }
 
@@ -38,6 +39,9 @@ export default  class EeRate extends BaseComponent {
                 cls = 'eestarpoint_1';
             }
             jsx.push(<div onClick={() => {
+                if (this.getState().finish === true) {
+                    return;
+                }
                 this.setState({point: i});
             }} className={cls}></div>);
         }
@@ -50,10 +54,16 @@ export default  class EeRate extends BaseComponent {
                     {jsx.map(one => one)}
                 </div>
 
-                <div className='eerate_rate'
-                     onClick={() => {
-                        onClick && onClick();
-                     }}>打分</div>
+                {
+                    this.getState().finish === false ?
+                        <div className='eerate_rate'
+                             onClick={() => {
+                                this.setState({finish: true});
+                             }}>打分</div>
+                        :
+                        <div className='eerate_rate eerate_rate_disable'>打分</div>
+                }
+
             </div>
         );
     }

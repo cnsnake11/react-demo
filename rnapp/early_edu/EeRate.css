@@ -20,13 +20,17 @@
     top: -12px;
 }
 
+.eerate .eerate_rate_disable {
+    background: #C9C9C9;
+}
+
 .eestarrate {
     display: inline-block;
     margin-right: 15px;
 }
 .eestarrate div{
     display: inline-block;
-    width: 30px;
+    width: 33px;
     height: 30px;
     margin-right: 10px;
     background-repeat: no-repeat;
