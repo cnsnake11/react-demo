@@ -39,10 +39,7 @@ export default class EeHome extends BaseComponent {
             <div id='EeHome' >
                 <EeHeader title='早教课堂' rightBtn='history'
                           rightBtnPress={() => {
-                            nav.push({
-                                name: 'EeHistory',
-                                page: () => <EeHistory />
-                            });
+                             $R.go('EeHistory');
                           }} />
                 {
                     this.getMain(data)
@@ -124,7 +121,7 @@ class HomeVideoList extends BaseComponent {
                         data.map((one, index) => {
                             let imgStyle={backgroundImage: `url(${one.img})`};
                             return (
-                                <li onClick={() => {this.getRootObj().goVideo()}}>
+                                <li onClick={() => $R.go('EeVideo')}>
                                     <div style={imgStyle}></div>
                                     <h2>{one.title}</h2>
                                     <h3>{one.count}次播放</h3>
@@ -136,10 +133,7 @@ class HomeVideoList extends BaseComponent {
                 </ul>
 
                 <EeButton title='更多育儿视频' onClick={() => {
-                    nav.push({
-                        name: 'EeVideoAudioList',
-                        page: () => <EeVideoAudioList type='video' />
-                    });
+                    $R.go('EeVideoAudioList/video');
                 }} />
             </div>
         );
@@ -161,7 +155,7 @@ class HomeAudioList extends BaseComponent {
                         data.map((one, index) => {
                             let imgStyle={backgroundImage: `url(${one.img})`};
                             return (
-                                <li onClick={() => {this.getRootObj().goAudio()}}>
+                                <li onClick={() => $R.go('EeAudio')}>
                                     <div style={imgStyle}></div>
                                     <h2>{one.title}</h2>
                                 </li>
@@ -172,10 +166,7 @@ class HomeAudioList extends BaseComponent {
                 </ul>
 
                 <EeButton title='更多育儿音频' onClick={() => {
-                    nav.push({
-                        name: 'EeVideoAudioList',
-                        page: () => <EeVideoAudioList type='audio' />
-                    });
+                        $R.go('EeVideoAudioList/audio');
                 }} />
             </div>
         );

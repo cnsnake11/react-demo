@@ -6,9 +6,6 @@ import {
     BaseLogicObj,
 } from '../comm';
 
-import EeVideo from './EeVideo.js';
-import EeAudio from './EeAudio.js';
-
 export default class EeHomeObj extends BaseLogicObj {
 
     constructor(root) {
@@ -24,20 +21,6 @@ export default class EeHomeObj extends BaseLogicObj {
             });
         }, 200);
 
-    }
-
-    goVideo() {
-        nav.push({
-            name: 'EeVideo',
-            page: () => <EeVideo />,
-        });
-    }
-
-    goAudio() {
-        nav.push({
-            name: 'EeAudio',
-            page: () => <EeAudio />,
-        });
     }
 
 }

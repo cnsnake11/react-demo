@@ -22,10 +22,7 @@ export default  class EeRecVideo extends BaseComponent {
         return (
             <div className='eerecvideo' style={{marginBottom: '10px'}}
                 onClick={() => {
-                    nav.push({
-                        name: 'EeVideo',
-                        page: () => <EeVideo />,
-                    })
+                    $R.go('EeVideo');
                 }}
                 >
                 <h1>推荐视频</h1>

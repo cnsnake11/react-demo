@@ -28,10 +28,7 @@ export default  class EeComment extends BaseComponent {
                 <EeComments root={this} data={data.comments} />
 
                 <EeButton title='查看全部评论' onClick={() => {
-                    nav.push({
-                        name: 'EeCommentList',
-                        page: () => <EeCommentList />
-                    });
+                    $R.go('EeCommentList');
                 }}/>
             </div>
         );
@@ -47,10 +44,7 @@ class EeWantComment extends BaseComponent {
             <div className='eewantcomment'>
                 <img src={data.icon}/>
                 <div onClick={() => {
-                    nav.push({
-                        name: 'EeDoComment',
-                        page: () => <EeDoComment />
-                    });
+                    $R.go('EeDoComment');
                 }}>我来说几句</div>
             </div>
         );

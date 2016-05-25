@@ -4,26 +4,41 @@
  * Built: 2014/12/28
  */
 var
-    Q=function(W,D,M,html,laHash,lash,L,LL,index,popstate,VS,Regex,key,Q){
+    Q=function(W,D,M,html,laHash,lash,L,LL,index,popstate,VS,Regex,key,Q,hash){
         html=D.getElementsByTagName('html')[0];
         laHash='`';
         Regex=[];
         key='!';
-        popstate=function(){
+        hash=[];
+        popstate=function(e){
             if(laHash==location.hash)
                 return;
 
             Q.lash=lash=location.hash.substring(key.length+1);
 
+            if (hash[hash.length - 2] === lash) {
+                nav.pop();
+                hash.pop();
+                return;
+            } else {
+                hash.push(lash);
+            }
+
             L=lash.split('/');
 
-            var
-                i=Regex.length;
-            while(i--)if(LL=lash.match(Regex[i][0])){
-                LL[0]=Regex[i][1];
-                L=LL;
-                break;
-            }
+            //alert(L);
+
+            //var i=Regex.length;
+            //while(i--)if(LL=lash.match(Regex[i][0])){
+            //    LL[0]=Regex[i][1];
+            //    L=LL;
+            //    break;
+            //}
+
+            //if(Q.pop){
+            //    Q.pop.apply(W,L);
+            //}
+
 
             if(!Q[L[0]]){
                 location.hash='#'+key+index;
@@ -31,8 +46,8 @@ var
                 return;
             }
 
-            if(Q.pop)
-                Q.pop.apply(W,L);
+            //if(Q.pop)
+            //    Q.pop.apply(W,L);
 
             laHash=location.hash;
 
@@ -52,12 +67,14 @@ var
 
                 popstate();
 
-                'onhashchange' in W?W.onhashchange=popstate:setInterval(function(){
-                    if(laHash!=location.hash){
-                        popstate();
-                        laHash=location.hash;
-                    }
-                },100);
+                //'onhashchange' in W?W.onhashchange=popstate:setInterval(function(){
+                //    if(laHash!=location.hash){
+                //        popstate();
+                //        laHash=location.hash;
+                //    }
+                //},100);
+
+                W.onhashchange=popstate;
 
                 return this
             },
@@ -98,9 +115,12 @@ var
             //    return this
             //},
             go:function(u){
-                location.hash='#'+key+u;
+                //location.hash='#'+key+u;
+                location.hash='#'+key+u+'/r'+Math.floor(Math.random()*1000000);
                 return this
             }
         };
         return Q;
-    }(this,document);
+    }(window,document);
+
+window.$R = Q;

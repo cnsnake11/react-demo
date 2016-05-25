@@ -4,6 +4,7 @@ import './base/normal.css';
 
 import React from 'react';
 import  'whatwg-fetch'; // 引入fetch，自动绑定到window，其它js不用引入了
+import  './lib/Q/Q.js'; // 引入Q.js,自动绑定到window
 
 import BaseLogicObj from './base/BaseLogicObj';
 import BaseComponent from './base/BaseComponent';
