@@ -11,7 +11,6 @@ import {
     Navigator,
 } from '../comm';
 import EeHome from './EeHome.js';
-import EeAudio from './EeAudio.js';
 
 class EeIndex extends BaseComponent {
 
@@ -28,7 +27,7 @@ class EeIndex extends BaseComponent {
     _getInitRoute() {
         return {
             name: 'home',
-            page: () => <EeAudio />
+            page: () => <EeHome />
         };
     }
 }
