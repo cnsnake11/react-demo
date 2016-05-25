@@ -35,3 +35,26 @@
     font-weight: normal;
 }
 
+.eestarpoint {
+    display: inline-block;
+    margin-right: 15px;
+}
+.eestarpoint div{
+    width: 13px;
+    height: 12px;
+    margin-left: 5px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.eestarpoint .eestarpoint_1{
+    background-image: url("./img/star-1.png");
+}
+.eestarpoint .eestarpoint_05{
+    background-image: url("./img/star-0.5.png");
+}
+.eestarpoint .eestarpoint_0{
+    background-image: url("./img/star-0.png");
+}
+

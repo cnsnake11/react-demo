@@ -76,9 +76,34 @@ class EeVideoDetail extends BaseComponent{
 
                 <div className='eevideo_title'>
                     <h1>{data.title}</h1>
-                    综合分值,,,,,&nbsp;&nbsp;&nbsp;&nbsp;{data.counts}次播放
+                    综合分值 <StarPoint point='3.5' /> {data.counts}次播放
                 </div>
             </div>
         );
     }
+}
+
+class StarPoint extends BaseComponent {
+
+    render() {
+        let point = this.getProps().point / 1;
+
+        let jsx = [];
+        for (let i = 1 ;i <= 5; i++) {
+            let cls;
+            if (point === (i - 0.5)) {
+                cls = 'eestarpoint_05';
+            } else if (point < i) {
+                cls = 'eestarpoint_0';
+            } else {
+                cls = 'eestarpoint_1';
+            }
+            jsx.push(<div className={cls}></div>);
+        }
+
+        return (
+            <div className='eestarpoint'>{jsx.map(one => one)}</div>
+        );
+    }
+
 }
