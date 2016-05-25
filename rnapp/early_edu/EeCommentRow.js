@@ -7,6 +7,7 @@ import React from 'react';
 
 import {
     BaseComponent,
+    DateApi,
 } from '../comm';
 
 import './EeComment.css';
@@ -17,10 +18,22 @@ export default  class EeCommentRow extends BaseComponent {
 
         let one = this.getProps().data;
 
+        let time = this.getProps().time;
+        let timeJsx;
+        if (time === true) {
+            timeJsx = (
+                <div className='eecommentrow_time'>
+                    <div></div>
+                    {DateApi.getTimeFromGive('2342323424')}
+                </div>
+            );
+        }
+
         return (
             <li>
                 <img src={one.user.icon}/>
                 <div>
+                    {timeJsx}
                     <h2>{one.user.nickname}</h2>
                     <h3>{one.title}</h3>
                 </div>

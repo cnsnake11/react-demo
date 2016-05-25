@@ -30,7 +30,7 @@
     width: 30px;
     height: 30px;
 }
-.eecommentlist li h2 {
+.eecommentlist li h2 , .eecommentrow_time{
     font-size: 12px;
     font-weight: normal;
     color: #999;
@@ -40,4 +40,16 @@
     font-size: 16px;
     font-weight: normal;
     color: #222;
+}
+
+.eecommentrow_time {
+    float: right;
+}
+.eecommentrow_time div {
+    background-image: url("./img/clock-gray.png");
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin: 1px 2px 0 0;
 }

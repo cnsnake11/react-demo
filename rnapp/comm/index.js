@@ -8,6 +8,7 @@ import  'whatwg-fetch'; // 引入fetch，自动绑定到window，其它js不用�
 import BaseLogicObj from './base/BaseLogicObj';
 import BaseComponent from './base/BaseComponent';
 import ListViewApi from './api/ListViewApi';
+import DateApi from './api/DateApi.js';
 import Navigator from './view/Navigator';
 import Loading from './view/Loading';
 
@@ -25,6 +26,7 @@ let BbtReact = {
 
     //api
     ListViewApi,
+    DateApi,
 
     // view
     Navigator,

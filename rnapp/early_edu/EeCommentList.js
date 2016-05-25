@@ -59,7 +59,7 @@ export default  class EeCommentList extends BaseComponent {
 
                 <ul className='eecommentlist'>
                     {
-                        this.getState().listData.map((one) => <EeCommentRow data={one}/>)
+                        this.getState().listData.map((one) => <EeCommentRow time={true} data={one}/>)
                     }
                 </ul>
             </div>
