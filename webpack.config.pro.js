@@ -13,8 +13,7 @@ module.exports={
     output:{
         path: path.resolve(__dirname, 'dist'),
         publicPath: "",// 链接的前缀地址，通常是cdn地址
-        //filename: "[name].[chunkhash].js"
-        filename: "[name].js"
+        filename: "[name].[chunkhash].js"
     },
     module: {
         loaders: [    //加载器
@@ -43,8 +42,7 @@ module.exports={
             }
         }),
         new WebpackMd5Hash(),
-        //new ExtractTextPlugin("[name].[contenthash:16].css"),   //单独使用style标签加载css并设置其路径
-        new ExtractTextPlugin("[name].css"),   //单独使用style标签加载css并设置其路径
+        new ExtractTextPlugin("[name].[contenthash:16].css"),   //单独使用style标签加载css并设置其路径
         new webpack.optimize.UglifyJsPlugin(
             {
                 compress: {
@@ -63,8 +61,7 @@ module.exports={
                 collapseWhitespace:true    //删除空白符与换行符
             }
         }),
-        //new webpack.optimize.CommonsChunkPlugin({names: ['frame'], filename: '[name].[chunkhash].js'})
-        new webpack.optimize.CommonsChunkPlugin({names: ['frame'], filename: '[name].js'})
+        new webpack.optimize.CommonsChunkPlugin({names: ['frame'], filename: '[name].[chunkhash].js'})
 
     ]
 };
