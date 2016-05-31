@@ -63,7 +63,7 @@ class EeAudioDetail extends BaseComponent{
     componentWillMount() {
 
         this.state = {
-            canplay: false,
+            canplay: true,
             duration: 0,
             playing: false
         };

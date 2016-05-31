@@ -36,8 +36,8 @@ export default class EeHome extends BaseComponent {
         let data = this.getState().initData;
 
         return (
-            <div id='EeHome' >
-                <EeHeader title='早教课堂' rightBtn='history'
+            <div id='EeHome' style={{height: '100%'}}>
+                <EeHeader title='早教课堂' rightBtn='history' space={false}
                           rightBtnPress={() => {
                              $R.go('EeHistory');
                           }} />
@@ -50,11 +50,15 @@ export default class EeHome extends BaseComponent {
     }
 
     getMain(data) {
+
+        let space = <div style={{height: '47px'}}></div>
+
         if (!data) {
-            return <Loading />;
+            return (<div>{space}<Loading /></div>);
         }
         return (
-            <div>
+            <div style={{height: '100%', overflow: 'auto'}}>
+                {space}
                 <HomeSlider data={data.sliders} root={this}/>
                 <HomeVideoList data={data.videos} root={this}/>
                 <HomeAudioList data={data.audios} root={this}/>
